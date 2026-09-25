@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Morphometric Imitation: From Morphology and Contact Aware Hand Retargeting to Sim-to-Real Visuomotor Policy.">
+  <meta name="keywords" content="Morphometric Imitation, Hand Retargeting, Dexterous Manipulation, Robot Hands, Sim-to-Real, Visuomotor Policy">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Morphometric Imitation</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css?v=f9bb77a972">
+  <link rel="icon" type="image/x-icon" sizes="16x16 32x32 48x48" href="./static/images/favicon.ico?v=hand-contact-1">
+  <link rel="icon" type="image/svg+xml" sizes="any" href="./static/images/favicon.svg?v=hand-contact-1">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script defer src="./static/js/selected-videos.js?v=1db35d7d82"></script>
+  <script defer src="./static/js/interactive-viewer.js?v=aed4f0bfd0"></script>
+  <script defer src="./static/js/rl-videos.js?v=1c6636af7f"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title publication-title">
+            <span class="publication-title-main">Morphometric Imitation</span>
+            <span class="publication-title-subtitle">From Morphology and Contact Aware Hand Retargeting to Sim-to-Real Visuomotor Policy</span>
+          </h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://people.eecs.berkeley.edu/~tsadja/">Tara Sadjadpour</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=jTluf5cAAAAJ&amp;hl=en">Siming He</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://ckwolfe.org/">C.K. Wolfe</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://haozhi.io/">Haozhi Qi</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://muelea.github.io/">Lea Wilken</a>,
+            </span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://people.eecs.berkeley.edu/~sastry/">S. Shankar Sastry</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://people.eecs.berkeley.edu/~tomlin/">Claire Tomlin</a><sup>*</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://people.eecs.berkeley.edu/~malik/">Jitendra Malik</a><sup>*</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">University of California, Berkeley</span>
+          </div>
+          <div class="is-size-6 publication-authors">
+            <span class="author-block"><sup>*</sup> Equal advising</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2609.28660" target="_blank" rel="noopener"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon" aria-hidden="true">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2609.28660" target="_blank" rel="noopener"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon" aria-hidden="true">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=EhxB9Wi5pGE" target="_blank" rel="noopener"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon" aria-hidden="true">
+                    <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/tsadja/morphometric" target="_blank" rel="noopener"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon" aria-hidden="true">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <h2 class="subtitle is-6 has-text-centered mb-4">
+        <strong>TLDR;</strong> One human demo. Any multi-fingered hand. Zero-shot sim-to-real visuomotor policy.
+      </h2>
+      <video id="teaser" class="mb-0" autoplay controls muted loop playsinline preload="metadata"
+             aria-label="Morphometric Imitation demonstration">
+        <source src="./static/videos/mmi-teaser.mp4?v=f2ab1eab37" type="video/mp4">
+        Your browser does not support embedded video.
+      </video>
+    </div>
+  </div>
+</section>
+
+
+<section class="section selected-videos" id="selected-videos" aria-labelledby="selected-videos-title">
+  <div class="container is-max-desktop">
+    <div class="gallery-header">
+      <div>
+        <h2 class="title is-3" id="selected-videos-title">Morphometric Imitation in action</h2>
+        <p class="gallery-intro"><strong>1× speed · Fully autonomous · Zero-shot sim-to-real</strong></p>
+        <p class="gallery-intro">10 object categories, each shown with 3 videos of 3 distinct object instances.</p>
+      </div>
+      <div class="gallery-navigation" aria-label="Video gallery navigation">
+        <button class="gallery-arrow" type="button" data-gallery-previous aria-label="Previous categories" aria-controls="object-gallery" disabled>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg>
+        </button>
+        <span class="gallery-status" data-gallery-status aria-live="polite" aria-atomic="true">Categories 1–3 of 10</span>
+        <button class="gallery-arrow" type="button" data-gallery-next aria-label="Next categories" aria-controls="object-gallery">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="gallery-layout">
+      <button class="gallery-arrow gallery-side-arrow" type="button" data-gallery-previous aria-label="Previous categories" aria-controls="object-gallery" disabled>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg>
+      </button>
+      <div class="object-gallery" id="object-gallery">
+        <article class="object-column" aria-labelledby="object-flashlight">
+          <figure class="gallery-card">
+            <video data-src="./static/videos/selected/flashlight_0.mp4?v=a4a1fc0dfd" controls muted loop playsinline preload="none" aria-label="Flashlight — Object 0">
+              Your browser does not support embedded video.
+            </video>
+          </figure>
+          <figure class="gallery-card">
+            <video data-src="./static/videos/selected/flashlight_1.mp4?v=8d821c5fbe" controls muted loop playsinline preload="none" aria-label="Flashlight — Object 1">
+              Your browser does not support embedded video.
+            </video>
+          </figure>
+          <figure class="gallery-card">
+            <video data-src="./static/videos/selected/flashlight_2.mp4?v=01ea50517c" controls muted loop playsinline preload="none" aria-label="Flashlight — Object 2">
+              Your browser does not support embedded video.
+            </video>
+          </figure>
+          <h3 class="object-title" id="object-flashlight">Flashlight</h3>
+        </article>
+        <article class="object-column" aria-labelledby="object-hammer">
+          <figure class="gallery-card">
+            <video data-src="./static/videos/selected/hammer_0.mp4?v=f32747393e" controls muted loop playsinline preload="none" aria-label="Hammer — Object 0">
+              Your browser does not support embedded video.
+            </video>
+          </figure>
+          <figure class="gallery-card">
+            <video data-src="./static/videos/selected/hammer_1.mp4?v=0297662b93" controls muted loop playsinline preload="none" aria-label="Hammer — Object 1">
+              Your browser does not support embedded video.
+            </video>
+          </figure>
+          <figure class="gallery-card">
+            <video data-src="./static/videos/selected/hammer_3.mp4?v=61580dfaa5" controls muted loop playsinline preload="none" aria-label="Hammer — Object 3">
+              Your browser does not support embedded video.
+            </video>
+          </figure>
+          <h3 class="object-title" id="object-hammer">Hammer</h3>
+        </article>
+        <article class="object-column" aria-labelledby="object-wineglass">
+          <figure class="gallery-card">
+            <video data-src="./static/videos/selected/wineglass_0.mp4?v=f4447d60f1" controls muted loop playsinline preload="none" aria-label="Wineglass — Object 0">
+              Your browser does not support embedded video.
+            </video>
+          </figure>
+          <figure class="gallery-card">
+            <video data-src="./static/videos/selected/wineglass_1.mp4?v=94f205e87c" controls muted loop playsinline preload="none" aria-label="Wineglass — Object 1">
+              Your browser does not support embedded video.
+            </video>
+          </figure>
+          <figure class="gallery-card">
+            <video data-src="./static/videos/selected/wineglass_3.mp4?v=5883e414cd" controls muted loop playsinline preload="none" aria-label="Wineglass — Object 3">
+              Your browser does not support embedded video.
+            </video>
+          </figure>
+          <h3 class="object-title" id="object-wineglass">Wineglass</h3>
+        </article>
+        <article class="object-column" aria-labelledby="object-bowl" hidden>
+          <figure class="gallery-card">
+            <video data-src="./static/videos/selected/bowl_0.mp4?v=918b8fdae1" controls muted loop playsinline preload="none" aria-label="Bowl — Object 0">
+              Your browser does not support embedded video.
+            </video>
+          </figure>
+          <figure class="gallery-card">
+            <video data-src="./static/videos/selected/bowl_1.mp4?v=e8b2a5e39d" controls muted loop playsinline preload="none" aria-label="Bowl — Object 1">
+              Your browser does not support embedded video.
+            </video>
+          </figure>
+          <figure class="gallery-card">
+            <video data-src="./static/videos/selected/bowl_2.mp4?v=3bdd0a6cad" controls muted loop playsinline preload="none" aria-label="Bowl — Object 2">
+              Your browser does not support embedded video.
+            </video>
+          </figure>
+          <h3 class="object-title" id="object-bowl">Bowl</h3>
+        </article>
+        <article class="object-column" aria-labelledby="object-torus" hidden>
+          <figure class="gallery-card">
+            <video data-src="./static/videos/selected/torus_0.mp4?v=a110edf68a" controls muted loop playsinline preload="none" aria-label="Torus — Object 0">
+              Your browser does not support embedded video.
+            </video>
+          </figure>
+          <figure class="gallery-card">
+            <video data-src="./static/videos/selected/torus_1.mp4?v=fb4dbb2fa8" controls muted loop playsinline preload="none" aria-label="Torus — Object 1">
+              Your browser does not support embedded video.
+            </video>
+          </figure>
+          <figure class="gallery-card">
+            <video data-src="./static/videos/selected/torus_2.mp4?v=c612ea6258" controls muted loop playsinline preload="none" aria-label="Torus — Object 2">
+              Your browser does not support embedded video.
+            </video>
+          </figure>
+          <h3 class="object-title" id="object-torus">Torus</h3>
+        </article>
+        <article class="object-column" aria-labelledby="object-alarm-clock" hidden>
+          <figure class="gallery-card">
+            <video data-src="./static/videos/selected/alarmclock_0.mp4?v=7a72098c0d" controls muted loop playsinline preload="none" aria-label="Alarm clock — Object 0">
+              Your browser does not support embedded video.
+            </video>
+          </figure>
+          <figure class="gallery-card">
+            <video data-src="./static/videos/selected/alarmclock_1.mp4?v=7ce39d07bf" controls muted loop playsinline preload="none" aria-label="Alarm clock — Object 1">
+              Your browser does not support embedded video.
+            </video>
+          </figure>
+          <figure class="gallery-card">
+            <video data-src="./static/videos/selected/alarmclock_2.mp4?v=ffafa1e7ba" controls muted loop playsinline preload="none" aria-label="Alarm clock — Object 2">
+              Your browser does not support embedded video.
+            </video>
+          </figure>
+          <h3 class="object-title" id="object-alarm-clock">Alarm clock</h3>
+        </article>
+        <article class="object-column" aria-labelledby="object-apple" hidden>
+          <figure class="gallery-card">
+            <video data-src="./static/videos/selected/apple_0.mp4?v=e17f916659" controls muted loop playsinline preload="none" aria-label="Apple — Object 0">
+              Your browser does not support embedded video.
+            </video>
+          </figure>
+          <figure class="gallery-card">
+            <video data-src="./static/videos/selected/apple_1.mp4?v=7b05a42f99" controls muted loop playsinline preload="none" aria-label="Apple — Object 1">
+              Your browser does not support embedded video.
+            </video>
+          </figure>
+          <figure class="gallery-card">
+            <video data-src="./static/videos/selected/apple_2.mp4?v=f75ca96ef3" controls muted loop playsinline preload="none" aria-label="Apple — Object 2">
+              Your browser does not support embedded video.
+            </video>
+          </figure>
+          <h3 class="object-title" id="object-apple">Apple</h3>
+        </article>
+        <article class="object-column" aria-labelledby="object-bulb" hidden>
+          <figure class="gallery-card">
+            <video data-src="./static/videos/selected/bulb_0.mp4?v=6588acfa8f" controls muted loop playsinline preload="none" aria-label="Bulb — Object 0">
+              Your browser does not support embedded video.
+            </video>
+          </figure>
+          <figure class="gallery-card">
+            <video data-src="./static/videos/selected/bulb_1.mp4?v=4978b317a8" controls muted loop playsinline preload="none" aria-label="Bulb — Object 1">
+              Your browser does not support embedded video.
+            </video>
+          </figure>
+          <figure class="gallery-card">
+            <video data-src="./static/videos/selected/bulb_2.mp4?v=7484416d11" controls muted loop playsinline preload="none" aria-label="Bulb — Object 2">
+              Your browser does not support embedded video.
+            </video>
+          </figure>
+          <h3 class="object-title" id="object-bulb">Bulb</h3>
+        </article>
+        <article class="object-column" aria-labelledby="object-cube" hidden>
+          <figure class="gallery-card">
+            <video data-src="./static/videos/selected/cube_0.mp4?v=3ba4344e7f" controls muted loop playsinline preload="none" aria-label="Cube — Object 0">
+              Your browser does not support embedded video.
+            </video>
+          </figure>
+          <figure class="gallery-card">
+            <video data-src="./static/videos/selected/cube_1.mp4?v=b1fe67542e" controls muted loop playsinline preload="none" aria-label="Cube — Object 1">
+              Your browser does not support embedded video.
+            </video>
+          </figure>
+          <figure class="gallery-card">
+            <video data-src="./static/videos/selected/cube_2.mp4?v=a6fc5cc041" controls muted loop playsinline preload="none" aria-label="Cube — Object 2">
+              Your browser does not support embedded video.
+            </video>
+          </figure>
+          <h3 class="object-title" id="object-cube">Cube</h3>
+        </article>
+        <article class="object-column" aria-labelledby="object-cup" hidden>
+          <figure class="gallery-card">
+            <video data-src="./static/videos/selected/cup_0.mp4?v=594933c740" controls muted loop playsinline preload="none" aria-label="Cup — Object 0">
+              Your browser does not support embedded video.
+            </video>
+          </figure>
+          <figure class="gallery-card">
+            <video data-src="./static/videos/selected/cup_1_front.mp4?v=f4fb213edd" controls muted loop playsinline preload="none" aria-label="Cup — Object 1">
+              Your browser does not support embedded video.
+            </video>
+          </figure>
+          <figure class="gallery-card">
+            <video data-src="./static/videos/selected/cup_2.mp4?v=86b1ec4d93" controls muted loop playsinline preload="none" aria-label="Cup — Object 2">
+              Your browser does not support embedded video.
+            </video>
+          </figure>
+          <h3 class="object-title" id="object-cup">Cup</h3>
+        </article>
+      </div>
+      <button class="gallery-arrow gallery-side-arrow" type="button" data-gallery-next aria-label="Next categories" aria-controls="object-gallery">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Human hand-object interactions (HOIs) provide a rich source of demonstrations for
+            dexterous manipulation, but learning directly from them presents challenges in bridging
+            morphology gaps, ensuring dynamical feasibility, and sim-to-real deployment. We present
+            Morphometric Imitation, a three-stage framework that transforms reconstructed HOIs into
+            zero-shot sim-to-real visuomotor policies. First, morphometric optimization (MMO)
+            kinematically retargets human motion across hand morphologies while preserving
+            demonstrated contacts. Second, residual reinforcement learning (RL) refines the
+            kinematic reference using object pose and contact information from the human motion to
+            produce dynamically feasible robot demonstrations. Third, these demonstrations are
+            distilled into visuomotor policies. Across three robot hands and ten HOIs, MMO improves
+            contact F1 over the strongest of five baselines by at least 8 points for every hand,
+            while also improving the success rate of downstream dynamic retargeting by as much as 35
+            points. Ablations on the residual RL show complementary benefits from using object pose
+            and contact information. Finally, the visuomotor policies achieve 89.3% zero-shot
+            success in 300 real-world trials on 30 objects.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered" id="paper-video">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/EhxB9Wi5pGE"
+                  title="Morphometric Imitation paper video"
+                  style="border: 0;"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+
+    <!-- Interactive retargeting. -->
+    <div class="interactive-retargeting" id="interactive-retargeting" aria-labelledby="interactive-retargeting-title">
+      <h2 class="title is-3 has-text-centered" id="interactive-retargeting-title">Morphometric Optimization: From human hand to robot grasp</h2>
+      <p class="has-text-centered viewer-intro">Explore MANO, morphed hands, object grasps, and robot motion across three hand–object pairs.</p>
+      <p class="viewer-instructions has-text-centered" id="viewer-instructions"><strong>Drag to rotate and inspect the hands.</strong> Scroll to zoom · On touchscreens, drag with one finger and pinch to zoom.</p>
+      <p class="viewer-status has-text-centered" data-viewer-status role="status">Loading the interactive scene…</p>
+      <div class="viewer-frame-host" data-viewer-host aria-busy="true">
+        <iframe src="./static/viewers/round-table.html?v=646bd0cfe6" title="Interactive MANO-to-robot retargeting viewer" aria-describedby="viewer-instructions" loading="lazy" allow="fullscreen"></iframe>
+        <ol class="viewer-stage-legend" aria-label="Retargeting steps">
+          <li><span>1</span> Morph the human hand</li>
+          <li><span>2</span> Retarget the object grasp</li>
+          <li><span>3</span> Transfer the grasp to the robot hand</li>
+        </ol>
+      </div>
+      <div class="viewer-actions">
+        <a href="./static/viewers/round-table.html?v=646bd0cfe6" target="_blank" rel="noopener" data-viewer-link>Open viewer in a new tab ↗</a>
+      </div>
+    </div>
+    <!--/ Interactive retargeting. -->
+
+    <!-- RL training results. -->
+    <section class="rl-results" id="rl-results" aria-labelledby="rl-results-title">
+      <h2 class="title is-3 has-text-centered" id="rl-results-title">Residual Reinforcement Learning: From retargeted motion to robot control</h2>
+      <p class="rl-results-intro has-text-centered">Compare the MANO hand motion, kinematic retargeting, and RL result for each object across three robot hands.</p>
+      <div class="rl-object-tabs" role="tablist" aria-label="Choose an object to compare" data-rl-tabs hidden>
+        <button class="rl-object-tab" type="button" role="tab" id="rl-tab-hammer" aria-controls="rl-panel-hammer" aria-selected="true" tabindex="0" data-rl-tab>Hammer</button>
+        <button class="rl-object-tab" type="button" role="tab" id="rl-tab-apple" aria-controls="rl-panel-apple" aria-selected="false" tabindex="-1" data-rl-tab>Apple</button>
+        <button class="rl-object-tab" type="button" role="tab" id="rl-tab-cube" aria-controls="rl-panel-cube" aria-selected="false" tabindex="-1" data-rl-tab>Cube</button>
+      </div>
+      <div class="rl-comparison-panel" id="rl-panel-hammer" role="tabpanel" aria-labelledby="rl-tab-hammer" data-rl-panel>
+        <div class="rl-comparison-layout">
+          <div class="rl-human-source">
+            <h3 class="rl-column-title">Human demonstration</h3>
+            <figure class="rl-video-card">
+              <video controls muted loop playsinline preload="none" width="1280" height="1440" poster="./static/videos/rl-results/hammer_mano.jpg" data-src="./static/videos/rl-results/hammer_mano.mp4?v=acfe637e13" aria-label="Hammer — Human: MANO hand motion">
+                <a href="./static/videos/rl-results/hammer_mano.mp4">Watch Hammer — Human: MANO hand motion</a>
+              </video>
+              <figcaption><span class="rl-stage-number">1</span> MANO hand motion</figcaption>
+            </figure>
+            <p class="rl-source-note">One human motion, retargeted to all three robot hands.</p>
+          </div>
+          <div class="rl-hand-grid">
+            <div class="rl-hand">
+              <h3 class="rl-column-title">Allegro</h3>
+              <div class="rl-video-pair">
+                <figure class="rl-video-card">
+                  <video controls muted loop playsinline preload="none" width="1280" height="1440" poster="./static/videos/rl-results/hammer_kinematic_allegro.jpg" data-src="./static/videos/rl-results/hammer_kinematic_allegro.mp4?v=b8cd79e05e" aria-label="Hammer — Allegro: Kinematic retargeting">
+                    <a href="./static/videos/rl-results/hammer_kinematic_allegro.mp4">Watch Hammer — Allegro: Kinematic retargeting</a>
+                  </video>
+                  <figcaption><span class="rl-stage-number">2</span> Kinematic retargeting</figcaption>
+                </figure>
+                <figure class="rl-video-card">
+                  <video controls muted loop playsinline preload="none" width="1280" height="1440" poster="./static/videos/rl-results/hammer_allegro.jpg" data-src="./static/videos/rl-results/hammer_allegro.mp4?v=bdecceca5e" aria-label="Hammer — Allegro: RL result">
+                    <a href="./static/videos/rl-results/hammer_allegro.mp4">Watch Hammer — Allegro: RL result</a>
+                  </video>
+                  <figcaption><span class="rl-stage-number">3</span> RL result</figcaption>
+                </figure>
+              </div>
+            </div>
+            <div class="rl-hand">
+              <h3 class="rl-column-title">Sharpa</h3>
+              <div class="rl-video-pair">
+                <figure class="rl-video-card">
+                  <video controls muted loop playsinline preload="none" width="1280" height="1440" poster="./static/videos/rl-results/hammer_kinematic_sharpa.jpg" data-src="./static/videos/rl-results/hammer_kinematic_sharpa.mp4?v=896c94426b" aria-label="Hammer — Sharpa: Kinematic retargeting">
+                    <a href="./static/videos/rl-results/hammer_kinematic_sharpa.mp4">Watch Hammer — Sharpa: Kinematic retargeting</a>
+                  </video>
+                  <figcaption><span class="rl-stage-number">2</span> Kinematic retargeting</figcaption>
+                </figure>
+                <figure class="rl-video-card">
+                  <video controls muted loop playsinline preload="none" width="1280" height="1440" poster="./static/videos/rl-results/hammer_sharpa.jpg" data-src="./static/videos/rl-results/hammer_sharpa.mp4?v=86b22c41ec" aria-label="Hammer — Sharpa: RL result">
+                    <a href="./static/videos/rl-results/hammer_sharpa.mp4">Watch Hammer — Sharpa: RL result</a>
+                  </video>
+                  <figcaption><span class="rl-stage-number">3</span> RL result</figcaption>
+                </figure>
+              </div>
+            </div>
+            <div class="rl-hand">
+              <h3 class="rl-column-title">Dex3</h3>
+              <div class="rl-video-pair">
+                <figure class="rl-video-card">
+                  <video controls muted loop playsinline preload="none" width="1280" height="1440" poster="./static/videos/rl-results/hammer_kinematic_dex3.jpg" data-src="./static/videos/rl-results/hammer_kinematic_dex3.mp4?v=1d75641fdd" aria-label="Hammer — Dex3: Kinematic retargeting">
+                    <a href="./static/videos/rl-results/hammer_kinematic_dex3.mp4">Watch Hammer — Dex3: Kinematic retargeting</a>
+                  </video>
+                  <figcaption><span class="rl-stage-number">2</span> Kinematic retargeting</figcaption>
+                </figure>
+                <figure class="rl-video-card">
+                  <video controls muted loop playsinline preload="none" width="1280" height="1440" poster="./static/videos/rl-results/hammer_dex3.jpg" data-src="./static/videos/rl-results/hammer_dex3.mp4?v=315053baf3" aria-label="Hammer — Dex3: RL result">
+                    <a href="./static/videos/rl-results/hammer_dex3.mp4">Watch Hammer — Dex3: RL result</a>
+                  </video>
+                  <figcaption><span class="rl-stage-number">3</span> RL result</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="rl-object-title">Hammer</p>
+      </div>
+      <div class="rl-comparison-panel" id="rl-panel-apple" role="tabpanel" aria-labelledby="rl-tab-apple" data-rl-panel>
+        <div class="rl-comparison-layout">
+          <div class="rl-human-source">
+            <h3 class="rl-column-title">Human demonstration</h3>
+            <figure class="rl-video-card">
+              <video controls muted loop playsinline preload="none" width="1280" height="1440" poster="./static/videos/rl-results/apple_mano.jpg" data-src="./static/videos/rl-results/apple_mano.mp4?v=a3226eb65f" aria-label="Apple — Human: MANO hand motion">
+                <a href="./static/videos/rl-results/apple_mano.mp4">Watch Apple — Human: MANO hand motion</a>
+              </video>
+              <figcaption><span class="rl-stage-number">1</span> MANO hand motion</figcaption>
+            </figure>
+            <p class="rl-source-note">One human motion, retargeted to all three robot hands.</p>
+          </div>
+          <div class="rl-hand-grid">
+            <div class="rl-hand">
+              <h3 class="rl-column-title">Allegro</h3>
+              <div class="rl-video-pair">
+                <figure class="rl-video-card">
+                  <video controls muted loop playsinline preload="none" width="1280" height="1440" poster="./static/videos/rl-results/apple_kinematic_allegro.jpg" data-src="./static/videos/rl-results/apple_kinematic_allegro.mp4?v=131f4fdf19" aria-label="Apple — Allegro: Kinematic retargeting">
+                    <a href="./static/videos/rl-results/apple_kinematic_allegro.mp4">Watch Apple — Allegro: Kinematic retargeting</a>
+                  </video>
+                  <figcaption><span class="rl-stage-number">2</span> Kinematic retargeting</figcaption>
+                </figure>
+                <figure class="rl-video-card">
+                  <video controls muted loop playsinline preload="none" width="1280" height="1440" poster="./static/videos/rl-results/apple_allegro.jpg" data-src="./static/videos/rl-results/apple_allegro.mp4?v=29abfa9c29" aria-label="Apple — Allegro: RL result">
+                    <a href="./static/videos/rl-results/apple_allegro.mp4">Watch Apple — Allegro: RL result</a>
+                  </video>
+                  <figcaption><span class="rl-stage-number">3</span> RL result</figcaption>
+                </figure>
+              </div>
+            </div>
+            <div class="rl-hand">
+              <h3 class="rl-column-title">Sharpa</h3>
+              <div class="rl-video-pair">
+                <figure class="rl-video-card">
+                  <video controls muted loop playsinline preload="none" width="1280" height="1440" poster="./static/videos/rl-results/apple_kinematic_sharpa.jpg" data-src="./static/videos/rl-results/apple_kinematic_sharpa.mp4?v=ee80185ed1" aria-label="Apple — Sharpa: Kinematic retargeting">
+                    <a href="./static/videos/rl-results/apple_kinematic_sharpa.mp4">Watch Apple — Sharpa: Kinematic retargeting</a>
+                  </video>
+                  <figcaption><span class="rl-stage-number">2</span> Kinematic retargeting</figcaption>
+                </figure>
+                <figure class="rl-video-card">
+                  <video controls muted loop playsinline preload="none" width="1280" height="1440" poster="./static/videos/rl-results/apple_sharpa.jpg" data-src="./static/videos/rl-results/apple_sharpa.mp4?v=f071aa0a27" aria-label="Apple — Sharpa: RL result">
+                    <a href="./static/videos/rl-results/apple_sharpa.mp4">Watch Apple — Sharpa: RL result</a>
+                  </video>
+                  <figcaption><span class="rl-stage-number">3</span> RL result</figcaption>
+                </figure>
+              </div>
+            </div>
+            <div class="rl-hand">
+              <h3 class="rl-column-title">Dex3</h3>
+              <div class="rl-video-pair">
+                <figure class="rl-video-card">
+                  <video controls muted loop playsinline preload="none" width="1280" height="1440" poster="./static/videos/rl-results/apple_kinematic_dex3.jpg" data-src="./static/videos/rl-results/apple_kinematic_dex3.mp4?v=6158e0805b" aria-label="Apple — Dex3: Kinematic retargeting">
+                    <a href="./static/videos/rl-results/apple_kinematic_dex3.mp4">Watch Apple — Dex3: Kinematic retargeting</a>
+                  </video>
+                  <figcaption><span class="rl-stage-number">2</span> Kinematic retargeting</figcaption>
+                </figure>
+                <figure class="rl-video-card">
+                  <video controls muted loop playsinline preload="none" width="1280" height="1440" poster="./static/videos/rl-results/apple_dex3.jpg" data-src="./static/videos/rl-results/apple_dex3.mp4?v=fb17eaeef5" aria-label="Apple — Dex3: RL result">
+                    <a href="./static/videos/rl-results/apple_dex3.mp4">Watch Apple — Dex3: RL result</a>
+                  </video>
+                  <figcaption><span class="rl-stage-number">3</span> RL result</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="rl-object-title">Apple</p>
+      </div>
+      <div class="rl-comparison-panel" id="rl-panel-cube" role="tabpanel" aria-labelledby="rl-tab-cube" data-rl-panel>
+        <div class="rl-comparison-layout">
+          <div class="rl-human-source">
+            <h3 class="rl-column-title">Human demonstration</h3>
+            <figure class="rl-video-card">
+              <video controls muted loop playsinline preload="none" width="1280" height="1440" poster="./static/videos/rl-results/cube_mano.jpg" data-src="./static/videos/rl-results/cube_mano.mp4?v=eff9e55534" aria-label="Cube — Human: MANO hand motion">
+                <a href="./static/videos/rl-results/cube_mano.mp4">Watch Cube — Human: MANO hand motion</a>
+              </video>
+              <figcaption><span class="rl-stage-number">1</span> MANO hand motion</figcaption>
+            </figure>
+            <p class="rl-source-note">One human motion, retargeted to all three robot hands.</p>
+          </div>
+          <div class="rl-hand-grid">
+            <div class="rl-hand">
+              <h3 class="rl-column-title">Allegro</h3>
+              <div class="rl-video-pair">
+                <figure class="rl-video-card">
+                  <video controls muted loop playsinline preload="none" width="1280" height="1440" poster="./static/videos/rl-results/cube_kinematic_allegro.jpg" data-src="./static/videos/rl-results/cube_kinematic_allegro.mp4?v=6281b2de22" aria-label="Cube — Allegro: Kinematic retargeting">
+                    <a href="./static/videos/rl-results/cube_kinematic_allegro.mp4">Watch Cube — Allegro: Kinematic retargeting</a>
+                  </video>
+                  <figcaption><span class="rl-stage-number">2</span> Kinematic retargeting</figcaption>
+                </figure>
+                <figure class="rl-video-card">
+                  <video controls muted loop playsinline preload="none" width="1280" height="1440" poster="./static/videos/rl-results/cube_allegro.jpg" data-src="./static/videos/rl-results/cube_allegro.mp4?v=dcb58536d9" aria-label="Cube — Allegro: RL result">
+                    <a href="./static/videos/rl-results/cube_allegro.mp4">Watch Cube — Allegro: RL result</a>
+                  </video>
+                  <figcaption><span class="rl-stage-number">3</span> RL result</figcaption>
+                </figure>
+              </div>
+            </div>
+            <div class="rl-hand">
+              <h3 class="rl-column-title">Sharpa</h3>
+              <div class="rl-video-pair">
+                <figure class="rl-video-card">
+                  <video controls muted loop playsinline preload="none" width="1280" height="1440" poster="./static/videos/rl-results/cube_kinematic_sharpa.jpg" data-src="./static/videos/rl-results/cube_kinematic_sharpa.mp4?v=4d21e0bbd4" aria-label="Cube — Sharpa: Kinematic retargeting">
+                    <a href="./static/videos/rl-results/cube_kinematic_sharpa.mp4">Watch Cube — Sharpa: Kinematic retargeting</a>
+                  </video>
+                  <figcaption><span class="rl-stage-number">2</span> Kinematic retargeting</figcaption>
+                </figure>
+                <figure class="rl-video-card">
+                  <video controls muted loop playsinline preload="none" width="1280" height="1440" poster="./static/videos/rl-results/cube_sharpa.jpg" data-src="./static/videos/rl-results/cube_sharpa.mp4?v=dde1b0aabb" aria-label="Cube — Sharpa: RL result">
+                    <a href="./static/videos/rl-results/cube_sharpa.mp4">Watch Cube — Sharpa: RL result</a>
+                  </video>
+                  <figcaption><span class="rl-stage-number">3</span> RL result</figcaption>
+                </figure>
+              </div>
+            </div>
+            <div class="rl-hand">
+              <h3 class="rl-column-title">Dex3</h3>
+              <div class="rl-video-pair">
+                <figure class="rl-video-card">
+                  <video controls muted loop playsinline preload="none" width="1280" height="1440" poster="./static/videos/rl-results/cube_kinematic_dex3.jpg" data-src="./static/videos/rl-results/cube_kinematic_dex3.mp4?v=b6f40b0c06" aria-label="Cube — Dex3: Kinematic retargeting">
+                    <a href="./static/videos/rl-results/cube_kinematic_dex3.mp4">Watch Cube — Dex3: Kinematic retargeting</a>
+                  </video>
+                  <figcaption><span class="rl-stage-number">2</span> Kinematic retargeting</figcaption>
+                </figure>
+                <figure class="rl-video-card">
+                  <video controls muted loop playsinline preload="none" width="1280" height="1440" poster="./static/videos/rl-results/cube_dex3.jpg" data-src="./static/videos/rl-results/cube_dex3.mp4?v=797b589c34" aria-label="Cube — Dex3: RL result">
+                    <a href="./static/videos/rl-results/cube_dex3.mp4">Watch Cube — Dex3: RL result</a>
+                  </video>
+                  <figcaption><span class="rl-stage-number">3</span> RL result</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="rl-object-title">Cube</p>
+      </div>
+      <p class="rl-playback-note">Select an object above. Each clip loops at its original speed; use the video controls to pause or inspect a moment.</p>
+      <noscript><p><a href="./static/videos/rl-results/hammer_mano.mp4">Hammer / MANO</a> · <a href="./static/videos/rl-results/hammer_kinematic_allegro.mp4">Hammer / Allegro kinematic</a> · <a href="./static/videos/rl-results/hammer_kinematic_sharpa.mp4">Hammer / Sharpa kinematic</a> · <a href="./static/videos/rl-results/hammer_kinematic_dex3.mp4">Hammer / Dex3 kinematic</a> · <a href="./static/videos/rl-results/hammer_allegro.mp4">Hammer / Allegro RL</a> · <a href="./static/videos/rl-results/hammer_sharpa.mp4">Hammer / Sharpa RL</a> · <a href="./static/videos/rl-results/hammer_dex3.mp4">Hammer / Dex3 RL</a> · <a href="./static/videos/rl-results/apple_mano.mp4">Apple / MANO</a> · <a href="./static/videos/rl-results/apple_kinematic_allegro.mp4">Apple / Allegro kinematic</a> · <a href="./static/videos/rl-results/apple_kinematic_sharpa.mp4">Apple / Sharpa kinematic</a> · <a href="./static/videos/rl-results/apple_kinematic_dex3.mp4">Apple / Dex3 kinematic</a> · <a href="./static/videos/rl-results/apple_allegro.mp4">Apple / Allegro RL</a> · <a href="./static/videos/rl-results/apple_sharpa.mp4">Apple / Sharpa RL</a> · <a href="./static/videos/rl-results/apple_dex3.mp4">Apple / Dex3 RL</a> · <a href="./static/videos/rl-results/cube_mano.mp4">Cube / MANO</a> · <a href="./static/videos/rl-results/cube_kinematic_allegro.mp4">Cube / Allegro kinematic</a> · <a href="./static/videos/rl-results/cube_kinematic_sharpa.mp4">Cube / Sharpa kinematic</a> · <a href="./static/videos/rl-results/cube_kinematic_dex3.mp4">Cube / Dex3 kinematic</a> · <a href="./static/videos/rl-results/cube_allegro.mp4">Cube / Allegro RL</a> · <a href="./static/videos/rl-results/cube_sharpa.mp4">Cube / Sharpa RL</a> · <a href="./static/videos/rl-results/cube_dex3.mp4">Cube / Dex3 RL</a></p></noscript>
+    </section>
+    <!--/ RL training results. -->
+
+
+  </div>
+</section>
+
+
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{sadjadpour2026morphometricimitationmorphologycontact,
+  title={Morphometric Imitation: From Morphology and Contact Aware Hand Retargeting to Sim-to-Real Visuomotor Policy},
+  author={Tara Sadjadpour and Siming He and C. K. Wolfe and Haozhi Qi and Lea Wilken and S. Shankar Sastry and Claire Tomlin and Jitendra Malik},
+  year={2026},
+  eprint={2609.28660},
+  archivePrefix={arXiv},
+  primaryClass={cs.RO},
+  url={https://arxiv.org/abs/2609.28660}
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

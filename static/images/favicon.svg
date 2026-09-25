@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Morphometric Imitation — hand and contact</title>
+  <defs>
+    <path id="hand" d="M25 55v-4c0-3-4-7-7-10l-7.5-8.5c-2-2.3-1.5-5.1.5-6s3.8.5 5.3 2.2L21 34V18a3 3 0 0 1 6 0v10h2V11a3 3 0 0 1 6 0v17h2V15a3 3 0 0 1 6 0v15h2v-7a3 3 0 0 1 6 0v13c0 7-5 12-8 15v4Z"/>
+    <clipPath id="robot-half">
+      <path d="M35 0h29v64H35Z"/>
+    </clipPath>
+  </defs>
+  <rect width="64" height="64" rx="15" fill="#102B46"/>
+  <use href="#hand" fill="#F4F5EE"/>
+  <use href="#hand" fill="#58B6C4" clip-path="url(#robot-half)"/>
+  <path d="M38 19h4m-4 7h4m-4 19h6m-7 6h5m4-23h4" fill="none" stroke="#102B46" stroke-width="2"/>
+  <circle cx="34" cy="37" r="6.5" fill="#102B46"/>
+  <circle cx="34" cy="37" r="4" fill="#FDB515"/>
+</svg>
